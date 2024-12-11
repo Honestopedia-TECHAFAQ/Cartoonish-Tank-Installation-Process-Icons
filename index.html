@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tank Installation Steps</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0073e6;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .step:hover {
+      background-color: #f0f8ff;
+      transform: translateY(-5px);
+    }
+
+    .step img {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content h2 {
+      margin: 0;
+      font-size: 1.2em;
+      color: #0073e6;
+    }
+
+    .step-content p {
+      margin: 5px 0 0;
+      color: #555;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .step {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .step img {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>How to Get Started</h1>
+
+    <div class="step" data-step="1">
+      <img src="https://via.placeholder.com/60" alt="Step 1 Icon">
+      <div class="step-content">
+        <h2>Step 1: Background Check & Credit Application</h2>
+        <p>Complete your background check and fill out a credit application to get started.</p>
+      </div>
+    </div>
+
+    <div class="step" data-step="2">
+      <img src="https://via.placeholder.com/60" alt="Step 2 Icon">
+      <div class="step-content">
+        <h2>Step 2: Delivery of Tanks</h2>
+        <p>Your tanks will be delivered to your yard once you're approved.</p>
+      </div>
+    </div>
+
+    <div class="step" data-step="3">
+      <img src="https://via.placeholder.com/60" alt="Step 3 Icon">
+      <div class="step-content">
+        <h2>Step 3: Easy Installation</h2>
+        <p>Install the tanks at your own pace. No need to wait for assistance!</p>
+      </div>
+    </div>
+
+    <div class="step" data-step="4">
+      <img src="https://via.placeholder.com/60" alt="Step 4 Icon">
+      <div class="step-content">
+        <h2>Step 4: Reordering Tanks Before They Run Out</h2>
+        <p>Get a notification to reorder before your tanks run out.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.step').forEach(step => {
+      step.addEventListener('click', () => {
+        const stepNumber = step.getAttribute('data-step');
+        alert(`You clicked on Step ${stepNumber}`);
+      });
+    });
+    function scrollToStep(stepNumber) {
+      const step = document.querySelector(`.step[data-step="${stepNumber}"]`);
+      if (step) {
+        step.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setTimeout(() => scrollToStep(2), 2000);
+  </script>
+</body>
+</html>
